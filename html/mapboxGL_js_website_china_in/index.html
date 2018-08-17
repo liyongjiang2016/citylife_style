@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='./mapbox-gl.js'></script>
+    <link href='./mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+		#zoom { position:absolute; top:0; bottom:0; color: #f00 ; float:right; height:20px; }
+    </style>
+
+        <style>
+      ul {
+          list-style-type: none;
+          margin: 10;
+          padding: 10;
+          width: 200px;
+          height: 100%;
+          background-color: #fff;
+          position: relative;
+      }
+       
+      li a {
+          display: block;
+          color: #000;
+          padding: 8px 16px;
+          text-decoration: none;
+      }
+       
+      /* 鼠标移动到选项上修改背景颜色 */
+      li a:hover {
+          background-color: #555;
+          color: white;
+      }
+
+      li b {
+          display: block;
+          color: #00f;
+          padding: 8px 16px;
+          text-decoration: none;
+      }
+       
+      /* 鼠标移动到选项上修改背景颜色 */
+      li b:hover {
+          background-color: #f00;
+          olor: #000;
+          color: white;
+      }
+    </style>
+
+	</head>
+	<body>
+		<p id="zoom" style="z-index:99999999" class='zoom'></p>
+		<div id='map'></div>
+		
+
+		<script>
+			//mapboxgl.accessToken = 'pk.eyJ1Ijoiemhhb2NodW5saWFuZyIsImEiOiJQVHZVa3A0In0.Z84N5wtGV0DCJMH8MrI8hw';
+			if(!mapboxgl.supported())
+			{
+				alert('Your browser does not support Web GL');
+			}
+			else
+			{
+				//var map = new mapboxgl.Map({
+  				//container: 'map', // container id
+  				//style: './styles/bright/bright-v8.json', //stylesheet location
+  				//center: [39.9425715635, 116.38252969], // starting position
+  				//zoom: 10 // starting zoom
+				
+				var map = new mapboxgl.Map({
+				container: 'map',
+				style: './styles/bright/bright-v8.json',
+				//center: [116.39785669, 39.9057025635], //tiananmen
+				center: [116.447477, 39.925762],
+				zoom: 15,
+				pitch: 0,
+				bearing: 0,
+				hash: true
+				});
+				var obj = document.getElementById("zoom");  
+				obj.innerHTML= "zoom = " + map.getZoom();  
+				map.on("zoomend" , function() {
+					console.log(map.getZoom())
+					var obj = document.getElementById("zoom");  
+					obj.innerHTML= "zoom = " + map.getZoom();  
+				})
+    		//map.on('load', function() {  
+           	//	map.addLayer({  
+        		//'id': 'buildings',  
+        		//'source': 'mapbox',  
+       		//	 'source-layer': 'building',  
+       		//	 'filter': ['==', '$type', 'Polygon'],  /* 过滤器 */  
+       		//	 'type': 'fill-extrusion',  
+       		//	 'minzoom': 15,  
+       		//	 'paint': {  
+          	//		 'fill-extrusion-color': '#aaa',  
+           	//		 'fill-extrusion-height': {  /* 使用source中的height属性为fill-extrusion-height赋值 */  
+                	//	'type': 'identity',  
+               	//		 'property': 'height'  
+            	//		},  
+            	//		'fill-extrusion-base': {  
+              	//		  'type': 'identity',  
+               	//		 'property': 'min_height'  
+           	//		 },  
+            	//		'fill-extrusion-opacity': .6  
+        		//	}  
+   		//	 });  
+		//	}); 
+    		
+    		// Add zoom and rotation controls to the map.
+				//map.addControl(new mapboxgl.Navigation({position:'topleft'}));
+				var nav = new mapboxgl.NavigationControl();
+				map.addControl(nav, 'top-right');
+				
+			}
+
+
+      function ChangeColor(lyrName,colortype,color)
+      {
+        map.setPaintProperty(lyrName, colortype, color);
+      }
+
+			
+		</script>
+		<p>help</p>
+	</body>
+</html>

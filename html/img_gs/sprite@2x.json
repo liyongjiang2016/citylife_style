@@ -1,0 +1,219 @@
+{
+  "Passenger station.png": {
+    "x": 150,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Metro transfer station.png": {
+    "x": 60,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Subway.png": {
+    "x": 150,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Airport.png": {
+    "x": 0,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Train.png": {
+    "x": 120,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Entertainment.png": {
+    "x": 180,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Landmark building.png": {
+    "x": 30,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Bus stop.png": {
+    "x": 90,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Education.png": {
+    "x": 150,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Hospital.png": {
+    "x": 270,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Hotel.png": {
+    "x": 0,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Provincial and municipal government.png": {
+    "x": 240,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Other.png": {
+    "x": 60,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Area gate.png": {
+    "x": 30,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Attractions.png": {
+    "x": 60,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "parking.png": {
+    "x": 120,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Pier.png": {
+    "x": 180,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Service area.png": {
+    "x": 30,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "shopping.png": {
+    "x": 270,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Stadium.png": {
+    "x": 0,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Toll.png": {
+    "x": 90,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Cultural venues.png": {
+    "x": 120,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "food.png": {
+    "x": 240,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "GAS.png": {
+    "x": 210,
+    "y": 0,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "Park.png": {
+    "x": 90,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "choose_seat": {
+    "x": 210,
+    "y": 30,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "subway_in_out": {
+    "x": 180,
+    "y": 60,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  }
+ 
+}

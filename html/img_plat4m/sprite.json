@@ -1,0 +1,451 @@
+{
+  "airport": {
+    "x": 0,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "area_gate": {
+    "x": 34,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "attraction": {
+    "x": 68,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "bus_stop": {
+    "x": 102,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "choose_seat": {
+    "x": 136,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "cultural_venues": {
+    "x": 170,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "education": {
+    "x": 204,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "entertainment": {
+    "x": 238,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "entrance": {
+    "x": 272,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "exit": {
+    "x": 306,
+    "y": 0,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "food": {
+    "x": 0,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "football": {
+    "x": 34,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "gas": {
+    "x": 68,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "golf": {
+    "x": 102,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "government": {
+    "x": 136,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "hospital": {
+    "x": 170,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "icons_map_train": {
+    "x": 204,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "landmark_building": {
+    "x": 238,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "map_hotel": {
+    "x": 272,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "metro_transfer_station": {
+    "x": 306,
+    "y": 34,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "other": {
+    "x": 0,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "park": {
+    "x": 34,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "parking": {
+    "x": 68,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "passenger_station": {
+    "x": 102,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "pier": {
+    "x": 136,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "service_area": {
+    "x": 170,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "shopping": {
+    "x": 204,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "ski_resort": {
+    "x": 238,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "stadium": {
+    "x": 272,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "subway": {
+    "x": 306,
+    "y": 68,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "toll": {
+    "x": 0,
+    "y": 102,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line1": {
+    "x": 34,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line2": {
+    "x": 68,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line4": {
+    "x": 102,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line5": {
+    "x": 136,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line6": {
+    "x": 170,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line7": {
+    "x": 204,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line8": {
+    "x": 238,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line9": {
+    "x": 272,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line10": {
+    "x": 306,
+    "y": 102,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line13": {
+    "x": 102,
+    "y": 136,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line14": {
+    "x": 136,
+    "y": 136,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line15": {
+    "x": 170,
+    "y": 136,
+    "width": 30,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line_airport_express": {
+    "x": 0,
+    "y": 136,
+    "width": 102,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "line_changping": {
+    "x": 0,
+    "y": 166,
+    "width": 102,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+   "line_fangshan": {
+    "x": 0,
+    "y": 196,
+    "width": 102,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "line_yizhuang": {
+    "x": 0,
+    "y": 227,
+    "width": 102,
+    "height": 30,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "national_road_gaosu": {
+    "x": 170,
+    "y": 166,
+    "width": 58,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "national_road_guodao": {
+    "x": 102,
+    "y": 200,
+    "width": 68,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "province_road_s": {
+    "x": 170,
+    "y": 200,
+    "width": 68,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "country_road_x": {
+    "x": 102,
+    "y": 166,
+    "width": 68,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "traffic_light": {
+    "x": 238,
+    "y": 166,
+    "width": 72,
+    "height": 32,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "P_line1.png": {
+    "x": 0,
+    "y": 256,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "P_line2.png": {
+    "x": 34,
+    "y": 256,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "P_line6.png": {
+    "x": 68,
+    "y": 256,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }, 
+    "P_line10.png": {
+    "x": 102,
+    "y": 256,
+    "width": 34,
+    "height": 34,
+    "pixelRatio": 1,
+    "sdf": false
+  }
+ 
+}

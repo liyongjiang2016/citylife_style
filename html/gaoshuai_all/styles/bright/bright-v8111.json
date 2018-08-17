@@ -1,0 +1,2716 @@
+{
+  "version": 8,
+  "name": "Bright",
+  "sources": {
+    "mapbox": {
+      "type": "vector",
+      "tileSize": 512,
+      "tiles": [
+        "http://192.168.110.203:8080/all/{z}/{x}/{y}.pbf"
+      ],
+      "attribution": "",
+      "minzoom": 3,
+      "maxzoom": 16,
+      "bounds": [
+        70,
+        0,
+        136,
+        54
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "sprite": "http://192.168.110.203:81/html/img/sprite",
+  "glyphs": "http://192.168.110.203:81/html/font-stack/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#edf0fe"
+      }
+    },
+    {
+      "id": "ocean",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "ocean",
+      "paint": {
+        "fill-color": "#a0c8f0"
+      }
+    },
+    {
+      "id": "school",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "aoi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ],
+        [
+          "==",
+          "aoi_type",
+          1301
+        ]
+      ],
+      "paint": {
+        "fill-color": "#F0F8FF"
+      }
+    },
+    {
+      "id": "sports",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "aoi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ],
+        [
+          "==",
+          "aoi_type",
+          1401
+        ]
+      ],
+      "paint": {
+        "fill-color": "#DDDDDD"
+      }
+    },
+    {
+      "id": "railwaystation",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "aoi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ],
+        [
+          "==",
+          "aoi_type",
+          1702
+        ]
+      ],
+      "paint": {
+        "fill-color": "#DDDDDD"
+      }
+    },
+    {
+      "id": "shopping_center",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "aoi",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ],
+        [
+          "==",
+          "aoi_type",
+          1902
+        ]
+      ],
+      "paint": {
+        "fill-color": "#f0f0f0"
+      }
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "landuse",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "paint": {
+        "fill-color": "#bedfc2"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "water",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "paint": {
+        "fill-color": "#c7e8fa"
+      }
+    },
+    {
+      "id": "water_offset",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "water",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "paint": {
+        "fill-color": "#00a0e9",
+        "fill-opacity": 0.3,
+        "fill-translate": [
+          0,
+          2.5
+        ]
+      }
+    },
+    {
+      "id": "road_border",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "border",
+      "minzoom": 16,
+      "filter": [
+        "==",
+        "$type",
+        "LineString"
+      ],
+      "paint": {
+        "line-color": "#000000",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "road_area_other",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "road_area",
+      "minzoom": 16,
+      "filter": [
+        "!in",
+        "type",
+        5001,
+        5002
+      ],
+      "paint": {
+        "fill-color": "#ffffff"
+      }
+    },
+	 {
+      "id": "subwayarea",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "subwayarea",
+      "minzoom": 16,
+      "filter": [
+        "==",
+         "$type",
+        "Polygon"
+      ],
+      "paint": {
+        "fill-color": "#000000"
+      }
+    },
+    {
+      "id": "road_area_city",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "road_area",
+      "minzoom": 16,
+      "filter": [
+        "==",
+        "type",
+        5002
+      ],
+      "paint": {
+        "fill-color": "#ffeeaa"
+      }
+    },
+    {
+      "id": "road_area_gaosu",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "road_area",
+      "minzoom": 16,
+      "filter": [
+        "==",
+        "type",
+        5001
+      ],
+      "paint": {
+        "fill-color": "#f8c164",
+        "fill-outline-color": "#f8c164"
+      }
+    },
+    {
+      "id": "railwayline_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "railwayline",
+      "minzoom": 11,
+      "filter": [
+        "==",
+        "$type",
+        "LineString"
+      ],
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              11,
+              2.4
+            ],
+            [
+              20,
+              3.2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "railwayline",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "railwayline",
+      "minzoom": 10,
+      "filter": [
+        "==",
+        "$type",
+        "LineString"
+      ],
+      "paint": {
+        "line-color": "#969696",
+        "line-dasharray": [
+          6,
+          3
+        ],
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              2.2
+            ],
+            [
+              20,
+              3
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_xiandao_caseing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 12,
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        5000
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              1
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              20,
+              13
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_ciyao_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        8002
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              1
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              20,
+              11
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_shengdao_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        4000
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              1
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              20,
+              11
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_guodao_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "all",
+        [
+          "==",
+          "road_class",
+          3000
+        ],
+        [
+          "==",
+          "$type",
+          "LineString"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0.5
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              14,
+              4
+            ],
+            [
+              20,
+              15
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              12,
+              0
+            ],
+            [
+              12.5,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_zhuyao_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "all",
+        [
+          "==",
+          "road_class",
+          8001
+        ],
+        [
+          "==",
+          "$type",
+          "LineString"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#cfcdca",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0.5
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              14,
+              4
+            ],
+            [
+              20,
+              15
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              12,
+              0
+            ],
+            [
+              12.5,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_kuaisulu_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        2000
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              5,
+              0.1
+            ],
+            [
+              6,
+              0.2
+            ],
+            [
+              7,
+              1.5
+            ],
+            [
+              20,
+              18
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_gaosu_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 5,
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        1000
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              5,
+              0.4
+            ],
+            [
+              6,
+              0.6
+            ],
+            [
+              7,
+              1.5
+            ],
+            [
+              20,
+              22
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_xiangdao_casing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 5,
+      "maxzoom": 16,
+      "filter": [
+        "==",
+        "road_class",
+        6000
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#cba",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              1.5
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_putongdaolu",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "maxzoom": 16,
+      "filter": [
+        "in",
+        "road_class",
+        8003,
+        7000
+      ],
+      "paint": {
+        "line-color": "#cba",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              15,
+              1.2
+            ],
+            [
+              20,
+              4
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_footway",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 17,
+      "filter": [
+        ">=",
+        "road_class",
+        9100
+      ],
+      "paint": {
+        "line-color": "#cba",
+        "line-dasharray": [
+          1.5,
+          0.75
+        ],
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              15,
+              1.2
+            ],
+            [
+              20,
+              4
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_xiangdao",
+      "ref": "road_xiangdao_casing",
+      "paint": {
+        "line-color": "#f0f0f0",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              5,
+              1.2
+            ],
+            [
+              6,
+              1.7
+            ],
+            [
+              7,
+              2.2
+            ],
+            [
+              20,
+              5.2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_xiandao",
+      "ref": "road_xiandao_caseing",
+      "paint": {
+        "line-color": "#fc8",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0
+            ],
+            [
+              13,
+              1.5
+            ],
+            [
+              20,
+              10
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_ciyao",
+      "ref": "road_ciyao_casing",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              20,
+              7.5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_shengdao",
+      "ref": "road_shengdao_casing",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              20,
+              7.5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_guodao",
+      "ref": "road_guodao_casing",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0
+            ],
+            [
+              14,
+              2.5
+            ],
+            [
+              20,
+              11.5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_zhuyao",
+      "ref": "road_zhuyao_casing",
+      "paint": {
+        "line-color": "#fff",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              9,
+              0
+            ],
+            [
+              14,
+              2.5
+            ],
+            [
+              20,
+              11.5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_kuaisulu",
+      "ref": "road_kuaisulu_casing",
+      "paint": {
+        "line-color": "#fea",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              6.5,
+              0
+            ],
+            [
+              7,
+              0.5
+            ],
+            [
+              20,
+              14
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_gaosu",
+      "ref": "road_gaosu_casing",
+      "paint": {
+        "line-color": "#fc8",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              6.5,
+              0
+            ],
+            [
+              7,
+              0.5
+            ],
+            [
+              20,
+              18
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_1",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#A8353A",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_2",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁２号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#004A88",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_4",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁４号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#008996",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_5",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁５号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#AF0061",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_6",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁６号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#B78500",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_7",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁７号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#FFC66E",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_8",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁８号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#009878",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_9",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁９号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#94D600",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_10",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１０号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#008FBF",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_13",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１３号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#F6DA40",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_14",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１４号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#CC9A8E",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_15",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１５号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#673278",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_16",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁１６号线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#6BA53A",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_yizhuang",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁亦庄线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#D6006E",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_batong",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁八通线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#A8353A",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_daxing",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁大兴线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#008996",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_fangshan",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁房山线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#DC6016",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_changping",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁昌平线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#DE85BB",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_jichang",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "name_chn",
+          "地铁机场线"
+        ]
+      ],
+      "paint": {
+        "line-color": "#A292B3",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "subwayline_building",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "subwayline",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "name_chn",
+          "地铁８号线三期（在建中）",
+          "地铁１４号线（在建中）",
+          "地铁３号线（在建中）",
+          "地铁房山线（在建中）"
+        ]
+      ],
+      "paint": {
+        "line-color": "#f0ede9",
+        "line-dasharray": [
+          1,
+          0.5
+        ],
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "road_footway_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        9000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_putongdaolu_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "in",
+        "road_class",
+        7000,
+        8003
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_xiangdao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        6000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_ciyao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        8002
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_zhuyao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        8001
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              19
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_xiandao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        5000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_shengdao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        4000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_guodao_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        3000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_kuaisu_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        2000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              22
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_gaosu_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "filter": [
+        "==",
+        "road_class",
+        1000
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "symbol-placement": "line",
+	"text-letter-spacing":0.1,
+	"symbol-spacing":1000,
+        "text-size": {
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#fff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "road_label_gaosu_shields",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 9,
+      "maxzoom": 11,
+      "filter": [
+        "all",
+        [
+          "==",
+          "road_class",
+          1000
+        ],
+        [
+          "in",
+          "reflen",
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "motorway_{reflen}",
+        "text-field": "{ref}",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-rotation-alignment": "viewport",
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": 500,
+        "text-size": 11
+      },
+      "paint": {
+        "text-color": "#765"
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "mapbox",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": "#dee4fe"
+      }
+    },
+    {
+      "id": "water_label",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "water",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              12
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#00a0e9",
+        "text-halo-width": 1.5,
+        "text-halo-color": "rgba(255,255,255,1.0)"
+      }
+    },
+    {
+      "id": "poi_label_1",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "==",
+        "$type",
+        "Point"
+      ],
+      "layout": {
+        "icon-image": "Other",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 9,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_xiaoqu",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "080300",
+        "080301",
+        "080302",
+        "080303",
+        "080304",
+        "080305"
+      ],
+      "layout": {
+        "icon-image": "",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              25
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#aa7433",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_office",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "080200",
+        "080201",
+        "080202",
+        "080203"
+      ],
+      "layout": {
+        "icon-image": "{icon}",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_school",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "090500",
+        "090501",
+        "090502",
+        "090503",
+        "090504",
+        "090505",
+        "090506"
+      ],
+      "layout": {
+        "icon-image": "{icon}",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_hospital",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "060100",
+        "060101",
+        "060102",
+        "060103",
+        "060104",
+        "060105",
+        "060106"
+      ],
+      "layout": {
+        "icon-image": "Hospital",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_govement",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "130100",
+        "130101",
+        "130102",
+        "130103",
+        "130104",
+        "130105",
+        "130106",
+        "130107",
+        "130108",
+        "130109",
+        "130110",
+        "130200",
+        "130201",
+        "130202",
+        "130203"
+      ],
+      "layout": {
+        "icon-image": "star-18",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_park",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "120100",
+        "120101",
+        "120102",
+        "120103",
+        "120104",
+        "120105",
+        "120106",
+        "120107",
+        "120108",
+        "120200",
+        "120201",
+        "120202",
+        "120203",
+        "120204",
+        "120205",
+        "120206",
+        "120207"
+      ],
+      "layout": {
+        "icon-image": "land-use-18",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              35
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_art",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "090100",
+        "090101",
+        "090102",
+        "090103",
+        "090104",
+        "090105",
+        "090106",
+        "090107",
+        "090108",
+        "090109",
+        "090110",
+        "090111",
+        "090112",
+        "090113",
+        "090114"
+      ],
+      "layout": {
+        "icon-image": "Other",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_bus_stop",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "140620",
+        "140621",
+        "140621",
+        "140623"
+      ],
+      "layout": {
+        "icon-image": "bus-12",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "",
+        "text-max-width": 16,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+	"icon-size":0.5,
+        "text-size": {
+          "stops": [
+            [
+              9,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_subway",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "140401",
+        "140402"
+      ],
+      "layout": {
+        "icon-image": "Subway",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 9,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          1.5
+        ],
+        "text-anchor": "top",
+        "text-size": 12,
+	"icon-size":0.5
+
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_railstation",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "==",
+        "poi_type",
+        "140201"
+      ],
+      "layout": {
+        "icon-image": "Train",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 9,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+        "text-size": 22,
+	"icon-size":0.5
+
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    },
+    {
+      "id": "poi_label_airport",
+      "type": "symbol",
+      "source": "mapbox",
+      "source-layer": "poi_label",
+      "minzoom": 8,
+      "filter": [
+        "in",
+        "poi_type",
+        "140101",
+        "140102",
+        "140103",
+        "140100"
+      ],
+      "layout": {
+        "icon-image": "Airport",
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_chn}",
+        "text-max-width": 9,
+        "text-padding": 2,
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-anchor": "top",
+        "text-size": 12,
+	"icon-size":0.5
+      },
+      "paint": {
+        "text-color": "#666",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1,
+        "text-halo-blur": 0.5
+      }
+    }
+
+  ]
+}

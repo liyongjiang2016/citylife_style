@@ -1,0 +1,76 @@
+{
+  "version": 8,
+  "name": "Bright",
+  "sources": {
+    "mapbox": {
+      "type": "vector",
+      "tileSize": 512,
+      "tiles": [
+        "http://192.168.102.118:8080/all/{z}/{x}/{y}.pbf"
+      ],
+      "attribution": "",
+      "minzoom": 3,
+      "maxzoom": 14,
+      "bounds": [
+        70,
+        0,
+        136,
+        54
+      ],
+      "center": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "sprite": "http://192.168.10.23/easygomap/styles/bright/img/sprite",
+  "glyphs": "http://192.168.102.89/font-stack/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#f8f4f0"
+      }
+    },
+
+    {
+      "id": "road",
+      "type": "line",
+      "source": "mapbox",
+      "source-layer": "road",
+      "minzoom": 12,
+      "filter": [
+        "==",
+        "$type",
+        "LineString"
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#EE4000",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              12,
+              1
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              20,
+              13
+            ]
+          ]
+        }
+      }
+    }
+    
+  ]
+}

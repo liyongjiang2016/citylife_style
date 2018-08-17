@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='../mapbox-gl-dev.js'></script>
+    <link href='../mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+	</head>
+	<body>
+
+		<div id='map'></div>
+		<script>
+			//mapboxgl.accessToken = 'pk.eyJ1Ijoiemhhb2NodW5saWFuZyIsImEiOiJQVHZVa3A0In0.Z84N5wtGV0DCJMH8MrI8hw';
+			if(!mapboxgl.supported())
+			{
+				alert('Your browser does not support Mapbox GL');
+			}
+			else
+			{
+				var map = new mapboxgl.Map({
+  				container: 'map', // container id
+  				style: '../styles/bright/bright-v7_server.json', //stylesheet location
+  				center: [39.9425715635, 116.38252969], // starting position
+  				zoom: 10 // starting zoom
+    		});
+    		
+    		
+    		// Add zoom and rotation controls to the map.
+				map.addControl(new mapboxgl.Navigation({position:'topleft'}));
+				
+				
+				// add a line 
+				map.on('style.load', function() {
+				  map.addSource("route", {
+				    "type": "geojson",
+				    "data": {
+				      "type": "Feature",
+				      "properties": {},
+				      "geometry": {
+				        "type": "LineString",
+				        "coordinates": [
+				          [116.3, 39.8],
+				          [116.6, 39.8],
+				          [116.6, 40.0],
+				          [116.3, 40.0]
+	
+				        ]
+				      }
+				    }
+				  });
+				
+				  map.addLayer({
+				    "id": "route",
+				    "type": "line",
+				    "source": "route",
+				    "layout": {
+				      "line-join": "round",
+				      "line-cap": "round"
+				    },
+				    "paint": {
+				      "line-color": "#888",
+				      "line-width": 8
+				    }
+				  });
+				});
+				
+				
+				// Add a marker 
+				map.on('style.load', function() {
+				  map.addSource("markers", {
+				    "type": "geojson",
+				    "data": {
+				      "type": "FeatureCollection",
+				      "features": [{
+				        "type": "Feature",
+				        "geometry": {
+				          "type": "Point",
+				          "coordinates": [116.3, 39.8]
+				        },
+				        "properties": {
+				          "title": "Start Position",
+				          "marker-symbol": "building"
+				        }
+				      },{
+				        "type": "Feature",
+				        "geometry": {
+				          "type": "Point",
+				          "coordinates": [116.6, 39.8]
+				        },
+				        "properties": {
+				          "title": "Second Position",
+				          "marker-symbol": "marker"
+				        }
+				      },{
+				        "type": "Feature",
+				        "geometry": {
+				          "type": "Point",
+				          "coordinates": [116.3, 40.0]
+				        },
+				        "properties": {
+				          "title": "End Position",
+				          "marker-symbol": "building"
+				        }
+				      }]
+				    }
+				  });
+				
+				  map.addLayer({
+				    "id": "markers",
+				    "type": "symbol",
+				    "source": "markers",
+				    "layout": {
+				      "icon-image": "{marker-symbol}-12",
+				      "text-field": "{title}",
+				      "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+				      "text-offset": [0, 0.6],
+				      "text-anchor": "top"
+				    },
+				    "paint": {
+				      "text-size": 12
+				    }
+				  });
+				});
+				
+				
+				// add a video
+				
+			}
+			
+
+		</script>
+	</body>
+</html>
